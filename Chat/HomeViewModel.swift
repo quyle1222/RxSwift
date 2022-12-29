@@ -3,6 +3,7 @@ import RxCocoa
 
 protocol ViewControllerViewModelInputs {
     func setMessageError(text:String)
+    func handleLogin()
 }
 
 protocol ViewControllerViewModelOutPuts {
@@ -22,15 +23,19 @@ class HomeViewModel: ViewControllerViewModelType,ViewControllerViewModelOutPuts,
     var outputs: ViewControllerViewModelOutPuts { return self }
     private var disposeBag = DisposeBag()
     
+    //MARK: - ViewControllerViewModelOutPuts
     var username = PublishSubject<String>()
     var password = PublishSubject<String>()
-        
-    //MARK: - ViewControllerViewModelOutPuts
     var contryResponse = PublishSubject<String>()
     var messageError = PublishSubject<String>()
-    
+        
     //MARK: - ViewControllerViewModelInputs
     func setMessageError(text: String) {
         messageError.onNext(text)
+    }
+    
+    func handleLogin(){
+        print("handle login")
+        username.onNext("")
     }
 }
