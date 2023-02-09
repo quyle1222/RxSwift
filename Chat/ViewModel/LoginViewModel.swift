@@ -60,11 +60,9 @@ class LoginViewModel {
         print("login username:\(username), password: \(password)")
         return Observable.create { observble in
             observble.onNext(.loading)
-            if username == "quyle1222" && password == "123456"{
-                observble.onNext(.success)
-            } else {
-                observble.onNext(.fail)
-            }
+            AuthRespository().requestLogin(data: AuthInput(username: username, password: password)).asObservable().subscribe { output in
+               print("output",output)
+            }.disposed(by: self.disposeBag)
             return Disposables.create()
         }
     }

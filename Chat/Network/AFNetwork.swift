@@ -5,8 +5,8 @@
 //  Created by Tú Phạm on 08/02/2023.
 //
 
-import Foundation
 import Alamofire
+
 enum KeyENV:String {
     case BASE_URL = "BASE_URL"
     
@@ -16,28 +16,29 @@ enum KeyENV:String {
 }
 
 enum PathUrl: String {
-    case LOGIN = "api/auth/login"
+    case LOGIN = "api/auth/create"
 }
 
 class AFNetwork {
     var baseURL:String!
-    
     init(){
-        baseURL = ProcessInfo.processInfo.environment[KeyENV.BASE_URL.toString];
-        print("baseURL",baseURL as Any)
-        
-        guard let mySetting = Bundle.main.object(forInfoDictionaryKey: "MySetting") as? String
-            else {
-            print("MySetting not found")
-            return }
-        print("mySetting \(mySetting)")
+        baseURL = Bundle.main.object(forInfoDictionaryKey: KeyENV.BASE_URL.toString) as? String ?? ""
+        print("baseURl",baseURL as Any)
     }
     
-    func getAPI(url:PathUrl){
-        
+    func getAPI(url: PathUrl, paramester: Parameters = [:]) -> DataRequest {
+        print("paramester",paramester)
+        return AF.request(baseURL + url.rawValue,
+                          method: .get,
+                          parameters: paramester,
+                          encoding: JSONEncoding.default)
     }
     
-    func postAPI(){
-        
+    func postAPI(url: PathUrl, paramester: Parameters = [:]) -> DataRequest {
+        print("paramester",paramester)
+        return AF.request(baseURL + url.rawValue,
+                          method: .post,
+                          parameters: paramester,
+                          encoding: JSONEncoding.default)
     }
 }
