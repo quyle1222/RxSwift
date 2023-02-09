@@ -6,6 +6,7 @@ target 'Chat' do
   use_frameworks!
 
   # Pods for Chat
+  pod 'Alamofire', '~> 5.6'
   pod 'IQKeyboardManagerSwift', '~> 6.5'
   pod 'RxCocoa', '~> 6.5'
   pod 'RxSwift', '~> 6.5'

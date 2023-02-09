@@ -22,6 +22,7 @@ class LoginViewModel {
     var username = BehaviorSubject<String>(value: "")
     var password = BehaviorSubject<String>(value: "")
     var state = PublishSubject<statusLogin>()
+    var network = AFNetwork()
     private var disposeBag = DisposeBag()
     
     var isValidUsername: Observable<Bool> {
@@ -49,6 +50,7 @@ class LoginViewModel {
                 self.state.onNext(statusLogin)
             }.disposed(by: self.disposeBag)
         }.disposed(by: disposeBag)
+        
         let output = Output(inValid: isValid.asDriver(onErrorJustReturn: false),
                             loginStatus: state.asDriver(onErrorJustReturn: .unuse))
         return output
@@ -56,10 +58,10 @@ class LoginViewModel {
     
     func login(username:String,password:String)-> Observable<statusLogin> {
         print("login username:\(username), password: \(password)")
-      return Observable.create { observble in
+        return Observable.create { observble in
             observble.onNext(.loading)
             if username == "quyle1222" && password == "123456"{
-              observble.onNext(.success)
+                observble.onNext(.success)
             } else {
                 observble.onNext(.fail)
             }
