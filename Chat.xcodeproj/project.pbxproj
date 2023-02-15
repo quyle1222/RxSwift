@@ -10,6 +10,8 @@
 		360E685A29933D1F00DE2043 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360E685929933D1F00DE2043 /* LoginViewController.swift */; };
 		360E685E29933E8B00DE2043 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360E685D29933E8B00DE2043 /* LoginViewModel.swift */; };
 		363524952993876C007C7053 /* AFNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363524942993876C007C7053 /* AFNetwork.swift */; };
+		3650A425299C81BF00CBDD35 /* AuthencationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3650A424299C81BF00CBDD35 /* AuthencationViewController.swift */; };
+		3650A429299C851900CBDD35 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3650A428299C851900CBDD35 /* ExploreViewController.swift */; };
 		3682D8A1295BCEC2005E10CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3682D8A0295BCEC2005E10CB /* AppDelegate.swift */; };
 		3682D8A3295BCEC2005E10CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3682D8A2295BCEC2005E10CB /* SceneDelegate.swift */; };
 		3682D8A5295BCEC2005E10CB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3682D8A4295BCEC2005E10CB /* HomeViewController.swift */; };
@@ -17,6 +19,13 @@
 		3682D8AA295BCEC3005E10CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3682D8A9295BCEC3005E10CB /* Assets.xcassets */; };
 		3682D8AD295BCEC3005E10CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3682D8AB295BCEC3005E10CB /* LaunchScreen.storyboard */; };
 		3682D8B5295BCF23005E10CB /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3682D8B4295BCF23005E10CB /* HomeViewModel.swift */; };
+		368D35942994EDDF00B4B52F /* AuthRespository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D35932994EDDF00B4B52F /* AuthRespository.swift */; };
+		368D35982994EE3400B4B52F /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D35972994EE3400B4B52F /* Auth.swift */; };
+		368D359A2994EEC000B4B52F /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D35992994EEC000B4B52F /* Encodable+Extension.swift */; };
+		36F764522999E8BF00A88CCF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36F764512999E8BF00A88CCF /* GoogleService-Info.plist */; };
+		36F76455299A0D4E00A88CCF /* ProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F76454299A0D4E00A88CCF /* ProfileUseCase.swift */; };
+		36F76457299A276C00A88CCF /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F76456299A276C00A88CCF /* DesignableUITextField.swift */; };
+		36F7645A299A2C6700A88CCF /* DesignableUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F76459299A2C6700A88CCF /* DesignableUIButton.swift */; };
 		DDEE382AF22B642D2702142F /* Pods_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FF7EFA30343777631DD849 /* Pods_Chat.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +34,8 @@
 		360E685929933D1F00DE2043 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		360E685D29933E8B00DE2043 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		363524942993876C007C7053 /* AFNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFNetwork.swift; sourceTree = "<group>"; };
+		3650A424299C81BF00CBDD35 /* AuthencationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthencationViewController.swift; sourceTree = "<group>"; };
+		3650A428299C851900CBDD35 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		3682D89D295BCEC2005E10CB /* Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3682D8A0295BCEC2005E10CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3682D8A2295BCEC2005E10CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +45,13 @@
 		3682D8AC295BCEC3005E10CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3682D8AE295BCEC3005E10CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3682D8B4295BCF23005E10CB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		368D35932994EDDF00B4B52F /* AuthRespository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRespository.swift; sourceTree = "<group>"; };
+		368D35972994EE3400B4B52F /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		368D35992994EEC000B4B52F /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
+		36F764512999E8BF00A88CCF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		36F76454299A0D4E00A88CCF /* ProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUseCase.swift; sourceTree = "<group>"; };
+		36F76456299A276C00A88CCF /* DesignableUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
+		36F76459299A2C6700A88CCF /* DesignableUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUIButton.swift; sourceTree = "<group>"; };
 		59A4F6765E654CAC92F77DDD /* Pods-Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat.release.xcconfig"; path = "Target Support Files/Pods-Chat/Pods-Chat.release.xcconfig"; sourceTree = "<group>"; };
 		C1FF7EFA30343777631DD849 /* Pods_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -61,6 +79,8 @@
 		360E685829933CFC00DE2043 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				3650A426299C84FC00CBDD35 /* Explore */,
+				3650A423299C81AC00CBDD35 /* Auth */,
 				3682D8A4295BCEC2005E10CB /* HomeViewController.swift */,
 				360E685929933D1F00DE2043 /* LoginViewController.swift */,
 			);
@@ -79,6 +99,7 @@
 		3635249229938165007C7053 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				368D35992994EEC000B4B52F /* Encodable+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -89,6 +110,22 @@
 				363524942993876C007C7053 /* AFNetwork.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		3650A423299C81AC00CBDD35 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				3650A424299C81BF00CBDD35 /* AuthencationViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		3650A426299C84FC00CBDD35 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				3650A428299C851900CBDD35 /* ExploreViewController.swift */,
+			);
+			path = Explore;
 			sourceTree = "<group>";
 		};
 		3682D894295BCEC2005E10CB = {
@@ -112,6 +149,11 @@
 		3682D89F295BCEC2005E10CB /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				36F764512999E8BF00A88CCF /* GoogleService-Info.plist */,
+				36F76458299A2C4000A88CCF /* CustomUI */,
+				36F76453299A0D3F00A88CCF /* UseCase */,
+				368D35952994EE1E00B4B52F /* Model */,
+				368D35922994EDC900B4B52F /* Respository */,
 				363524932993816D007C7053 /* Network */,
 				3635249229938165007C7053 /* Extension */,
 				360E685B29933E7100DE2043 /* ViewModel */,
@@ -124,6 +166,47 @@
 				3682D8AE295BCEC3005E10CB /* Info.plist */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		368D35922994EDC900B4B52F /* Respository */ = {
+			isa = PBXGroup;
+			children = (
+				368D35932994EDDF00B4B52F /* AuthRespository.swift */,
+			);
+			path = Respository;
+			sourceTree = "<group>";
+		};
+		368D35952994EE1E00B4B52F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				368D35962994EE2800B4B52F /* Auth */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		368D35962994EE2800B4B52F /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				368D35972994EE3400B4B52F /* Auth.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		36F76453299A0D3F00A88CCF /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				36F76454299A0D4E00A88CCF /* ProfileUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		36F76458299A2C4000A88CCF /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				36F76456299A276C00A88CCF /* DesignableUITextField.swift */,
+				36F76459299A2C6700A88CCF /* DesignableUIButton.swift */,
+			);
+			path = CustomUI;
 			sourceTree = "<group>";
 		};
 		86C7F8133C8D8498B77CA1C5 /* Pods */ = {
@@ -196,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3682D8AD295BCEC3005E10CB /* LaunchScreen.storyboard in Resources */,
+				36F764522999E8BF00A88CCF /* GoogleService-Info.plist in Resources */,
 				3682D8AA295BCEC3005E10CB /* Assets.xcassets in Resources */,
 				3682D8A8295BCEC2005E10CB /* Main.storyboard in Resources */,
 			);
@@ -251,12 +335,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				3682D8B5295BCF23005E10CB /* HomeViewModel.swift in Sources */,
+				36F7645A299A2C6700A88CCF /* DesignableUIButton.swift in Sources */,
+				3650A429299C851900CBDD35 /* ExploreViewController.swift in Sources */,
 				3682D8A5295BCEC2005E10CB /* HomeViewController.swift in Sources */,
 				363524952993876C007C7053 /* AFNetwork.swift in Sources */,
+				368D359A2994EEC000B4B52F /* Encodable+Extension.swift in Sources */,
 				360E685E29933E8B00DE2043 /* LoginViewModel.swift in Sources */,
+				368D35942994EDDF00B4B52F /* AuthRespository.swift in Sources */,
+				36F76455299A0D4E00A88CCF /* ProfileUseCase.swift in Sources */,
 				3682D8A1295BCEC2005E10CB /* AppDelegate.swift in Sources */,
 				360E685A29933D1F00DE2043 /* LoginViewController.swift in Sources */,
+				3650A425299C81BF00CBDD35 /* AuthencationViewController.swift in Sources */,
 				3682D8A3295BCEC2005E10CB /* SceneDelegate.swift in Sources */,
+				36F76457299A276C00A88CCF /* DesignableUITextField.swift in Sources */,
+				368D35982994EE3400B4B52F /* Auth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +500,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				BASE_URL = "http://192.168.120.238:8888/";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JDJ9QB4MRD;
@@ -440,6 +534,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JDJ9QB4MRD;

@@ -13,12 +13,14 @@ class LoginViewModel {
         let username: Observable<String>
         let password: Observable<String>
         let didTapLogin: Observable<Void>
+        let didTapGoogleLogin: Observable<Void>
     }
     
     struct Output {
         let inValid:Driver<Bool>
         let loginStatus: Driver<statusLogin>
     }
+    var delegate:LoginViewController?
     var username = BehaviorSubject<String>(value: "")
     var password = BehaviorSubject<String>(value: "")
     var state = PublishSubject<statusLogin>()
@@ -50,7 +52,6 @@ class LoginViewModel {
                 self.state.onNext(statusLogin)
             }.disposed(by: self.disposeBag)
         }.disposed(by: disposeBag)
-        
         let output = Output(inValid: isValid.asDriver(onErrorJustReturn: false),
                             loginStatus: state.asDriver(onErrorJustReturn: .unuse))
         return output
@@ -61,7 +62,7 @@ class LoginViewModel {
         return Observable.create { observble in
             observble.onNext(.loading)
             AuthRespository().requestLogin(data: AuthInput(username: username, password: password)).asObservable().subscribe { output in
-               print("output",output)
+              
             }.disposed(by: self.disposeBag)
             return Disposables.create()
         }

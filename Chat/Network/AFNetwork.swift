@@ -23,7 +23,6 @@ class AFNetwork {
     var baseURL:String!
     init(){
         baseURL = Bundle.main.object(forInfoDictionaryKey: KeyENV.BASE_URL.toString) as? String ?? ""
-        print("baseURl",baseURL as Any)
     }
     
     func getAPI(url: PathUrl, paramester: Parameters = [:]) -> DataRequest {
