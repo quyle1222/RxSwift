@@ -194,10 +194,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NpH-nj-4h6" userLabel="topView">
-                                <rect key="frame" x="0.0" y="44" width="414" height="30"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Y0-NN-LpQ">
-                                        <rect key="frame" x="25" y="-4" width="78" height="38"/>
+                                        <rect key="frame" x="25" y="-9" width="78" height="38"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="38" id="j0f-Cz-Qbd"/>
                                         </constraints>
@@ -206,7 +206,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notification_inactive" translatesAutoresizingMaskIntoConstraints="NO" id="L72-FT-BXB">
-                                        <rect key="frame" x="361" y="1" width="28" height="28"/>
+                                        <rect key="frame" x="361" y="-4" width="28" height="28"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="28" id="W53-yb-nuz"/>
@@ -220,11 +220,11 @@
                                     <constraint firstItem="3Y0-NN-LpQ" firstAttribute="leading" secondItem="NpH-nj-4h6" secondAttribute="leading" constant="25" id="Gj6-Fm-epM"/>
                                     <constraint firstItem="L72-FT-BXB" firstAttribute="centerY" secondItem="NpH-nj-4h6" secondAttribute="centerY" id="Z6U-aL-FP2"/>
                                     <constraint firstAttribute="trailing" secondItem="L72-FT-BXB" secondAttribute="trailing" constant="25" id="p9K-wG-IJu"/>
-                                    <constraint firstAttribute="height" constant="30" id="rgi-qs-rj7"/>
+                                    <constraint firstAttribute="height" constant="20" id="rgi-qs-rj7"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="300" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="26P-2J-Azx">
-                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                                <rect key="frame" x="0.0" y="84" width="414" height="778"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>

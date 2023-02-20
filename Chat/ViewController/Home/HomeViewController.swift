@@ -5,7 +5,7 @@ import RxSwift
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var mainTableView: UITableView!
     
-    let listContent:[Int] = Array(0...5)
+    let listContent:[Int] = Array(0...10)
     let storyCellReuseIdentifier = "StoryCellTableViewCell"
     let contentCellReuseIdentifier = "ContentCell"
 

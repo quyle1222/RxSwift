@@ -9,6 +9,11 @@ import UIKit
 
 class ContentCell: UITableViewCell {
     
+    @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var commentIcon: UIImageView!
+    @IBOutlet weak var likeLabel: UILabel!
+    @IBOutlet weak var likeIcon: UIImageView!
+    @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var avatarImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,9 +27,12 @@ class ContentCell: UITableViewCell {
     }
     
     func setup(){
+        contentView.layer.backgroundColor = UIColor.white.cgColor
+        contentView.layer.cornerRadius = 12
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         avatarImageView.isUserInteractionEnabled = true
         avatarImageView.addGestureRecognizer(tapGestureRecognizer)
+        postImage.contentMode = .scaleToFill
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)

@@ -11,6 +11,7 @@ class StoryCellTableViewCell: UITableViewCell,UICollectionViewDelegate,UICollect
     @IBOutlet weak var collectionView: UICollectionView!
     let cellReuseIdentifier = "StoryItemCollectionViewCell"
     let listItemFirstCell:[Int] = Array(0...5)
+    let startPoint = CGPoint(x: -5, y: 0)
     override func awakeFromNib() {
         super.awakeFromNib()
         setup()
@@ -30,12 +31,20 @@ class StoryCellTableViewCell: UITableViewCell,UICollectionViewDelegate,UICollect
         collectionView.dataSource = self
         collectionView.isPagingEnabled = true
         collectionView.register(UINib(nibName: cellReuseIdentifier, bundle: nil), forCellWithReuseIdentifier: cellReuseIdentifier)
-        collectionView.contentOffset = CGPoint(x:-20,y: 0)
+        DispatchQueue.main.async {
+            self.collectionView.setContentOffset(self.startPoint, animated: false)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as? StoryItemCollectionViewCell else {
             return UICollectionViewCell()
+        }
+        let image = UIImage(named: "plus")
+        if image != nil && indexPath.row == 0 {
+            cell.image.image = image
+            cell.setupForAddStoryItem()
+            cell.textName.text = "Add Story"
         }
         return cell
     }
@@ -45,6 +54,23 @@ class StoryCellTableViewCell: UITableViewCell,UICollectionViewDelegate,UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 80, height: 120)
+        return CGSize(width: 60, height: 100)
     }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if (!decelerate && scrollView == collectionView && collectionView.contentOffset == .zero) {
+            DispatchQueue.main.async {
+                self.collectionView.setContentOffset(self.startPoint, animated: true)
+            }
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if (scrollView == collectionView && collectionView.contentOffset == .zero) {
+            DispatchQueue.main.async {
+                self.collectionView.setContentOffset(self.startPoint, animated: true)
+            }
+        }
+    }
+    
 }
