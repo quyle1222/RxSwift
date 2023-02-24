@@ -45,7 +45,9 @@ class LoginViewController: UIViewController {
     }
     
     func navigationToHome(){
-        performSegue(withIdentifier: self.loginToHomeIdentifier, sender: self)
+        let viewController = TabbarController()
+        viewController.modalPresentationStyle = .overFullScreen
+        self.navigationController?.topViewController?.present(viewController, animated: true)
     }
     
     @IBAction func actionGoogleLogin(_ sender: UIButton) {

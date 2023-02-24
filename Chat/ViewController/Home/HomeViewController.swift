@@ -39,7 +39,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.layoutIfNeeded()
             return cell
         default:
-            let cell = mainTableView.dequeueReusableCell(withIdentifier: contentCellReuseIdentifier) as? ContentCell  ?? UITableViewCell()
+            let cell = mainTableView.dequeueReusableCell(withIdentifier: contentCellReuseIdentifier) as? ContentCell ?? UITableViewCell()
             return cell
         }
     }
