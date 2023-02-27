@@ -11,7 +11,8 @@ class StoryCellTableViewCell: UITableViewCell,UICollectionViewDelegate,UICollect
     @IBOutlet weak var collectionView: UICollectionView!
     let cellReuseIdentifier = "StoryItemCollectionViewCell"
     let listItemFirstCell:[Int] = Array(0...5)
-    let startPoint = CGPoint(x: -5, y: 0)
+    let startPoint = CGPoint(x: -20, y: 0)
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setup()

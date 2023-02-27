@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 struct AuthInput: Codable {
     let username:String
     let password:String

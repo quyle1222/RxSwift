@@ -10,7 +10,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var googleButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordTextField: DesignableUITextField!
     private var disposeBag = DisposeBag()
     let loginToHomeIdentifier = "LoginToHome"
     
@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
     }
     
     func configUI(){
+        passwordTextField.enablePasswordToggle()
         if let userId = ProfileUseCase.shareInstance.userId, userId.trimmingCharacters(in: .whitespacesAndNewlines).count > 0 {
             DispatchQueue.main.async {
                 self.navigationToHome()
@@ -45,9 +46,7 @@ class LoginViewController: UIViewController {
     }
     
     func navigationToHome(){
-        let viewController = TabbarController()
-        viewController.modalPresentationStyle = .overFullScreen
-        self.navigationController?.topViewController?.present(viewController, animated: true)
+        UIApplication.shared.windows.first?.rootViewController = UINavigationController(rootViewController: TabbarController())
     }
     
     @IBAction func actionGoogleLogin(_ sender: UIButton) {
