@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		360C5DB029ADAFB000D22852 /* SurveyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360C5DAE29ADAFB000D22852 /* SurveyCell.swift */; };
+		360C5DB129ADAFB000D22852 /* SurveyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 360C5DAF29ADAFB000D22852 /* SurveyCell.xib */; };
+		360C5DB329ADB65500D22852 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360C5DB229ADB65500D22852 /* BaseViewController.swift */; };
+		360C5DB729ADE29000D22852 /* SurveyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360C5DB529ADE29000D22852 /* SurveyPolicyViewController.swift */; };
+		360C5DB829ADE29000D22852 /* SurveyPolicyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 360C5DB629ADE29000D22852 /* SurveyPolicyViewController.xib */; };
 		360E685A29933D1F00DE2043 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360E685929933D1F00DE2043 /* LoginViewController.swift */; };
 		360E685E29933E8B00DE2043 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360E685D29933E8B00DE2043 /* LoginViewModel.swift */; };
 		363524952993876C007C7053 /* AFNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363524942993876C007C7053 /* AFNetwork.swift */; };
@@ -43,6 +48,11 @@
 
 /* Begin PBXFileReference section */
 		18108756B67253F31800AD4F /* Pods-Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat.debug.xcconfig"; path = "Target Support Files/Pods-Chat/Pods-Chat.debug.xcconfig"; sourceTree = "<group>"; };
+		360C5DAE29ADAFB000D22852 /* SurveyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyCell.swift; sourceTree = "<group>"; };
+		360C5DAF29ADAFB000D22852 /* SurveyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SurveyCell.xib; sourceTree = "<group>"; };
+		360C5DB229ADB65500D22852 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		360C5DB529ADE29000D22852 /* SurveyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyPolicyViewController.swift; sourceTree = "<group>"; };
+		360C5DB629ADE29000D22852 /* SurveyPolicyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SurveyPolicyViewController.xib; sourceTree = "<group>"; };
 		360E685929933D1F00DE2043 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		360E685D29933E8B00DE2043 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		363524942993876C007C7053 /* AFNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFNetwork.swift; sourceTree = "<group>"; };
@@ -100,13 +110,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		360C5DAD29ADAF8A00D22852 /* SurveyCell */ = {
+			isa = PBXGroup;
+			children = (
+				360C5DAE29ADAFB000D22852 /* SurveyCell.swift */,
+				360C5DAF29ADAFB000D22852 /* SurveyCell.xib */,
+			);
+			path = SurveyCell;
+			sourceTree = "<group>";
+		};
+		360C5DB429ADE27600D22852 /* Survey */ = {
+			isa = PBXGroup;
+			children = (
+				360C5DB529ADE29000D22852 /* SurveyPolicyViewController.swift */,
+				360C5DB629ADE29000D22852 /* SurveyPolicyViewController.xib */,
+			);
+			path = Survey;
+			sourceTree = "<group>";
+		};
 		360E685829933CFC00DE2043 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				360C5DB429ADE27600D22852 /* Survey */,
 				3688C0EA29A73FD000BA47C8 /* TabbarNavigation */,
 				365FF35B299E3BEF000C5B95 /* Home */,
 				3650A426299C84FC00CBDD35 /* Explore */,
 				3650A423299C81AC00CBDD35 /* Auth */,
+				360C5DB229ADB65500D22852 /* BaseViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -148,6 +178,7 @@
 		3650A426299C84FC00CBDD35 /* Explore */ = {
 			isa = PBXGroup;
 			children = (
+				360C5DAD29ADAF8A00D22852 /* SurveyCell */,
 				3696B9AE29A7544900EAE08E /* ExploreViewController.swift */,
 				3696B9AF29A7544900EAE08E /* ExploreViewController.xib */,
 			);
@@ -214,22 +245,22 @@
 		3682D89F295BCEC2005E10CB /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				365FF36A299E6E1D000C5B95 /* Utils */,
 				36F764512999E8BF00A88CCF /* GoogleService-Info.plist */,
-				36F76458299A2C4000A88CCF /* CustomUI */,
-				36F76453299A0D3F00A88CCF /* UseCase */,
-				368D35952994EE1E00B4B52F /* Model */,
-				368D35922994EDC900B4B52F /* Respository */,
-				363524932993816D007C7053 /* Network */,
-				3635249229938165007C7053 /* Extension */,
-				360E685B29933E7100DE2043 /* ViewModel */,
-				360E685829933CFC00DE2043 /* ViewController */,
+				3682D8AE295BCEC3005E10CB /* Info.plist */,
 				3682D8A0295BCEC2005E10CB /* AppDelegate.swift */,
 				3682D8A2295BCEC2005E10CB /* SceneDelegate.swift */,
-				3682D8A6295BCEC2005E10CB /* Main.storyboard */,
 				3682D8A9295BCEC3005E10CB /* Assets.xcassets */,
+				36F76458299A2C4000A88CCF /* CustomUI */,
+				3635249229938165007C7053 /* Extension */,
 				3682D8AB295BCEC3005E10CB /* LaunchScreen.storyboard */,
-				3682D8AE295BCEC3005E10CB /* Info.plist */,
+				3682D8A6295BCEC2005E10CB /* Main.storyboard */,
+				368D35952994EE1E00B4B52F /* Model */,
+				363524932993816D007C7053 /* Network */,
+				368D35922994EDC900B4B52F /* Respository */,
+				36F76453299A0D3F00A88CCF /* UseCase */,
+				365FF36A299E6E1D000C5B95 /* Utils */,
+				360E685829933CFC00DE2043 /* ViewController */,
+				360E685B29933E7100DE2043 /* ViewModel */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -362,7 +393,9 @@
 				3682D8AA295BCEC3005E10CB /* Assets.xcassets in Resources */,
 				3682D8A8295BCEC2005E10CB /* Main.storyboard in Resources */,
 				365FF360299E3C11000C5B95 /* StoryCellTableViewCell.xib in Resources */,
+				360C5DB829ADE29000D22852 /* SurveyPolicyViewController.xib in Resources */,
 				365FF364299E3C21000C5B95 /* ContentCell.xib in Resources */,
+				360C5DB129ADAFB000D22852 /* SurveyCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,7 +452,9 @@
 				36F7645A299A2C6700A88CCF /* DesignableUIButton.swift in Sources */,
 				3688C0F929A740AE00BA47C8 /* TabbarItem.swift in Sources */,
 				365FF363299E3C21000C5B95 /* ContentCell.swift in Sources */,
+				360C5DB729ADE29000D22852 /* SurveyPolicyViewController.swift in Sources */,
 				3682D8A5295BCEC2005E10CB /* HomeViewController.swift in Sources */,
+				360C5DB329ADB65500D22852 /* BaseViewController.swift in Sources */,
 				363524952993876C007C7053 /* AFNetwork.swift in Sources */,
 				365FF35F299E3C11000C5B95 /* StoryCellTableViewCell.swift in Sources */,
 				36AF85E5299CC7410072C0AB /* TextField+Extension.swift in Sources */,
@@ -437,6 +472,7 @@
 				36F76457299A276C00A88CCF /* DesignableUITextField.swift in Sources */,
 				3696B9B029A7544900EAE08E /* ExploreViewController.swift in Sources */,
 				368D35982994EE3400B4B52F /* Auth.swift in Sources */,
+				360C5DB029ADAFB000D22852 /* SurveyCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

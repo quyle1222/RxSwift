@@ -45,23 +45,24 @@ class CustomTabbar: UIImageView {
         itemTitleLabel.textAlignment = .center
         itemTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         itemTitleLabel.clipsToBounds = true
-        itemIconView.image = item.icon?.withRenderingMode(.automatic)
+        itemIconView.image = item.icon?.withTintColor(.gray, renderingMode: .automatic)
+        itemIconView.tintColor = .gray
         itemIconView.translatesAutoresizingMaskIntoConstraints = false
         itemIconView.clipsToBounds = true
-//        tabBarItem.layer.backgroundColor = UIColor.black.cgColor
+        itemTitleLabel.isHidden = true
         tabBarItem.addSubview(itemIconView)
         tabBarItem.addSubview(itemTitleLabel)
         tabBarItem.translatesAutoresizingMaskIntoConstraints = false
         tabBarItem.clipsToBounds = true
         NSLayoutConstraint.activate([
+            itemIconView.leadingAnchor.constraint(equalTo: tabBarItem.leadingAnchor, constant: 35),
             itemIconView.heightAnchor.constraint(equalToConstant: 25), // Fixed height for our tab item(25pts)
             itemIconView.widthAnchor.constraint(equalToConstant: 25), // Fixed width for our tab item icon
             itemIconView.centerXAnchor.constraint(equalTo: tabBarItem.centerXAnchor),
-            itemIconView.topAnchor.constraint(equalTo: tabBarItem.topAnchor, constant: 8), // Position menu item icon 8pts from the top of it's parent view
-            itemIconView.leadingAnchor.constraint(equalTo: tabBarItem.leadingAnchor, constant: 35),
-            itemTitleLabel.heightAnchor.constraint(equalToConstant: 13), // Fixed height for title label
-            itemTitleLabel.widthAnchor.constraint(equalTo: tabBarItem.widthAnchor), // Position label full width across tab bar item
-            itemTitleLabel.topAnchor.constraint(equalTo: itemIconView.bottomAnchor, constant: 4), // Position title label 4pts below item icon
+            itemIconView.topAnchor.constraint(equalTo: tabBarItem.topAnchor, constant: 25), // Position menu item icon 8pts from the top of it's parent view
+//            itemTitleLabel.heightAnchor.constraint(equalToConstant: 13), // Fixed height for title label
+//            itemTitleLabel.widthAnchor.constraint(equalTo: tabBarItem.widthAnchor), // Position label full width across tab bar item
+//            itemTitleLabel.topAnchor.constraint(equalTo: itemIconView.bottomAnchor, constant: 4), // Position title label 4pts below item icon
         ])
         tabBarItem.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.handleTap))) // Each item should be able to trigger and action on tap
         return tabBarItem
@@ -77,11 +78,16 @@ class CustomTabbar: UIImageView {
     }
     func activateTab(tab: Int) {
         let tabToActivate = self.subviews[tab]
-        let borderWidth = tabToActivate.frame.size.width - 20
+        if let image =  tabToActivate.subviews.first(where: { view in
+            return view is UIImageView
+          }) {
+            image.tintColor = .blue
+        }
+        let borderWidth = tabToActivate.frame.size.width
         let borderLayer = CALayer()
-        borderLayer.backgroundColor = UIColor.green.cgColor
+        borderLayer.backgroundColor = UIColor.blue.cgColor
         borderLayer.name = "active border"
-        borderLayer.frame = CGRect(x: 10, y: 0, width: borderWidth, height: 2)
+        borderLayer.frame = CGRect(x: 0, y: 0, width: borderWidth, height: 2)
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0.4, delay: 0.0, options: [.curveEaseIn, .allowUserInteraction], animations: {
                 tabToActivate.layer.addSublayer(borderLayer)
@@ -94,6 +100,12 @@ class CustomTabbar: UIImageView {
     }
     func deactivateTab(tab: Int) {
         let inactiveTab = self.subviews[tab]
+        if let image =  inactiveTab.subviews.first(where: { view in
+            return view is UIImageView
+          }) {
+            image.tintColor = .gray
+        }
+        
         let layersToRemove = inactiveTab.layer.sublayers!.filter({ $0.name == "active border" })
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0.25, delay: 0.0, options: [.curveEaseIn, .allowUserInteraction], animations: {

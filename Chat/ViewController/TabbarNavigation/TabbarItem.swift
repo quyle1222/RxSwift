@@ -26,11 +26,11 @@ enum TabItem: String, CaseIterable {
     var icon: UIImage? {
         switch self {
         case .home:
-            return UIImage(named: "google")!
+            return UIImage(systemName: "house")!
         case .explore:
-            return UIImage(named: "google")!
+            return UIImage(systemName: "paperplane.fill")!
         case .friends:
-            return UIImage(named: "google")!
+            return UIImage(systemName: "person.fill")!
         }
     }
     

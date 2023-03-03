@@ -59,19 +59,19 @@ class StoryCellTableViewCell: UITableViewCell,UICollectionViewDelegate,UICollect
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if (!decelerate && scrollView == collectionView && collectionView.contentOffset == .zero) {
-            DispatchQueue.main.async {
-                self.collectionView.setContentOffset(self.startPoint, animated: true)
-            }
-        }
+//        if (!decelerate && scrollView == collectionView && collectionView.contentOffset == .zero) {
+//            DispatchQueue.main.async {
+//                self.collectionView.setContentOffset(self.startPoint, animated: true)
+//            }
+//        }
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        if (scrollView == collectionView && collectionView.contentOffset == .zero) {
-            DispatchQueue.main.async {
-                self.collectionView.setContentOffset(self.startPoint, animated: true)
-            }
-        }
+//        if (scrollView == collectionView && collectionView.contentOffset == .zero) {
+//            DispatchQueue.main.async {
+//                self.collectionView.setContentOffset(self.startPoint, animated: true)
+//            }
+//        }
     }
     
 }

@@ -21,6 +21,11 @@ class LoginViewController: UIViewController {
         binding()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationToHome()
+    }
+    
     func configUI(){
         passwordTextField.enablePasswordToggle()
         if let userId = ProfileUseCase.shareInstance.userId, userId.trimmingCharacters(in: .whitespacesAndNewlines).count > 0 {
@@ -46,7 +51,9 @@ class LoginViewController: UIViewController {
     }
     
     func navigationToHome(){
-        UIApplication.shared.windows.first?.rootViewController = UINavigationController(rootViewController: TabbarController())
+        let vc = UINavigationController(rootViewController: TabbarController())
+        vc.isNavigationBarHidden = true
+        UIApplication.shared.windows.first?.rootViewController = vc
     }
     
     @IBAction func actionGoogleLogin(_ sender: UIButton) {

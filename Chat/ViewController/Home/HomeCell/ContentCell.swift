@@ -28,6 +28,10 @@ class ContentCell: UITableViewCell {
     }
     
     func setup(){
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowRadius = 6
+        self.layer.shadowOpacity = 0.2
+        self.layer.shadowOffset = .zero
         containerView.layer.cornerRadius = 12
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         avatarImageView.isUserInteractionEnabled = true
